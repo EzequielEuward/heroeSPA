@@ -1,0 +1,38 @@
+body {
+    background-color: #1C1C27;
+}
+
+.custom-link {
+    margin-top: 10px;
+    padding: 5px 10px;
+    font-size: 14px;
+    border-radius: 5px;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease;
+    color: #fff;
+    border: 1px solid #555;
+}
+
+.custom-link:hover {
+    background-color: #1455aad3;
+    color: #fff;
+}
+
+.list-group {
+    margin: 0;
+    padding: 0;
+}
+
+.list-group-item {
+    border: none;
+}
+
+.custom-list-group {
+    background-color: transparent;
+}
+
+.custom-list-group-item {
+    background-color: transparent;
+    border: none;
+   
+}

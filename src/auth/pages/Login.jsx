@@ -1,35 +1,33 @@
+import { useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { LoginForm } from '../../UI/components/LoginForm';
+import { AuthContext } from '../context/AuthContext';
 
 export const Login = () => {
 
+  const { login } = useContext( AuthContext );
   const navigate = useNavigate();
 
-  const onLogout = () => {
-    navigate('/marvel', {
+  const onLogin = () => {
+    
+    const lastPath = localStorage.getItem('lastPath') || '/';
+    login( 'Ezequiel Euward' );
+    navigate( lastPath, {
       replace: true
     });
-  };
+  }
 
   return (
-    < >
+    <div className="container mt-5">
+      <h1 className='text-light'>Login</h1>
+      <hr />
 
-      <div className="container mt-5 d-flex justify-content-center">
-        <form className="form-container bg-light p-4 rounded shadow-sm">
-          <LoginForm></LoginForm>
-          <div className="d-flex justify-content-between">
-            <button type="submit" className="btn btn-primary mt-2"
-              onClick={onLogout}
-            >
-              Iniciar sesión</button>
+      <button 
+        className="btn btn-primary"
+        onClick={ onLogin }
+      >
+        Login
+      </button>
 
-          </div>
-
-        </form>
-      </div>
-
-    </>
+    </div>
   )
 }
-
-export default Login
